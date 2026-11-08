@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mas amba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo">uji coba</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#beranda">beranda</a></li>
+            <li><a href="#tentang">tentang</a></li>
+            <li><a href="#proyek">proyek</a></li>
+            <li><a href="#kontak">kontak</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <span class="hero-tag">tersedia proyek sesat</span>
+            <div class="hero-halo">
+                <h1 class="hero-name" id="teks-hallo"></h1>
+                <span class="accent" id="teks-ketik"></span>
+            </div>
+            <p class="hero-role">ilmu hytam & dan nyantet</p>
+            <p class="hero-desc">sy ingin menghitamkan</p>
+            <div class="btn_style">
+                <a href="proyek" class="btn1">proyek</a>
+                <a href="kontak" class="btn2">kontak</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tentang" class="tentang">
+        <div class="tentang-styl">
+            <div class="tentang-card ttg-amba muncul">
+                <p class="ttg-amba1">// tentang amba</p>
+                <img src="gambar/img6.jpg" class="gambar_amba" alt="foto mas amba">
+            </div>
+            <div class="tentang-card muncul">
+                <h2 class="pengenalan">"seni adalah penghitaman"</h2>
+                <p class="ttg-amba2">dia bernama asli dreambull,dia di kenal sebagai
+                    mas amba di indonesia karena kontennya yg menyebut kata "im about to cum" yg
+                    terdengar seperti ambatukam oleh telinga orang indonesia sehingga ia lebih dikenal dengan mas amba 
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyek" class="proyek">
+        <div class="proyek1">
+            <p class="proyek-p muncul">// proyek amba</p>
+            <h2 class="proyek-h2 muncul">karya yg sy banggakan</h2>
+            <p class="proyek-p2 muncul">
+                kumpulan proyek yg mencerminkan kemampuan dan gaya<br>
+                mas amba
+            </p>
+            <div class="pilih muncul">
+                <div class="card">
+
+                </div>
+                <div class="card">
+
+                </div>
+                <div class="card">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="kontak">
+        <div class="kontak2">
+            <div class="kontak-card muncul">
+                <p class="kontak-p2">// kontak<br</p>
+                <h3 class="kontak-p2">kontak saya</h3>
+                <form class="kontak-card2" >
+                    <label for="nama">nama</label>
+                    <input type="text" id="nama" placeholder="nama kamu">
+                    <span class="pesan-error" id="err-nama"></span>
+
+                    <label for="email">email</label>
+                    <input type="text" id="email" placeholder="email@contoh.com">
+                    <span class="pesan-error" id="err-email"></span>
+
+                    <label for="pesan">pesan</label>
+                    <textarea id="pesan" rows="4" placeholder="tulis pesanmu di sini..."></textarea>
+                    <span class="pesan-error" id="err-pesan"></span>
+
+                    <button class="tombol"="submit">kirim pesan</button>
+                </form>
+                <p class="salken">salam kenal kenal semuanya hehehehe</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2026 · <strong style="color:#89dceb;">alif</strong><strong style="color:#f5c2e7;">ngeteh</strong>.com · dibuat dengan ☕ dan HTML, CSS, JS</p>
+    </footer>
+
+    <script>
+        let navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        let teks_hallo = 'halo saya'
+        let posisi_hallo = 0;
+        let elemen_hallo = document.getElementById('teks-hallo')
+
+        let teks_target  = 'mas amba';  
+        let posisi_ketik = 0;          
+        let elemen_ketik = document.getElementById('teks-ketik');
+
+        function ketik_huruf() {
+            if (posisi_ketik < teks_target.length) {
+                elemen_ketik.textContent += teks_target[posisi_ketik];
+                posisi_ketik++;  
+                setTimeout(ketik_huruf, 120);
+            }
+        }
+
+        function ketik_huruf2() {
+            if (posisi_hallo < teks_hallo.length) {
+                elemen_hallo.textContent += teks_hallo[posisi_hallo]
+                posisi_hallo++
+                setTimeout(ketik_huruf2,120)
+            } else {
+                setTimeout(ketik_huruf,300)
+            }
+        }
+        setTimeout(ketik_huruf2, 250)
+
+        var semua_elemen = document.querySelectorAll('.muncul');
+        var pengamat = new IntersectionObserver(function(daftar) {
+            for (var i = 0; i < daftar.length; i++) {
+                if (daftar[i].isIntersecting) {
+                    daftar[i].target.classList.add('kelihatan');
+                    pengamat.unobserve(daftar[i].target);
+                }
+            }
+ 
+        }, { threshold: 0.30 });
+ 
+        for (var i = 0; i < semua_elemen.length; i++) {
+            pengamat.observe(semua_elemen[i]);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+    :root {
+      --warna-bg        : #0d0f14;   /* background utama (hitam gelap) */
+      --warna-bg-card   : #13161e;   /* background card / kotak */
+      --warna-garis     : #1f2330;   /* warna garis pembatas */
+      --warna-emas      : #c8a96e;   /* warna aksen / emas */
+      --warna-teks      : #e8e4dc;   /* warna teks utama */
+      --warna-teks-redup: #8a8880;   /* warna teks abu-abu / redup */
+      --font-judul      : 'Playfair Display', serif;
+      --font-isi        : 'DM Sans', sans-serif;
+    }
+
+
+
+*,
+html{
+  padding: 0px;   /* hapus padding bawaan browser */
+  margin:0px;     /* hapus margin bawaan browser */
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+}
+
+body {
+  background-color: #1e1e2e;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.muncul {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.7s ease;
+}
+.muncul.kelihatan {
+  opacity: 1;
+  transform: translateY(0);
+}
+.navbar {
+  position: fixed;
+  background-color: #11111b;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 32px; /*memperbesar navbar */
+  display:flex ;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.4s, border-color 0.4s;
+}
+.navbar.scrolled {
+  border-bottom-color: #313244;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.logo {
+  font-size: 22px;
+  color: #89dceb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #8a8880;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover{
+  color: #f5c2e7;
+}
+
+.hero {
+  min-height: 100vh;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  /* color: #fefae0; */
+  color: #8a8880;
+  display: flex;
+  padding-top: 20vh;
+}
+@keyframes kedip {
+  0%, 100% { border-color: #f5c2e7; }
+  50%       { border-color: transparent; }
+}
+ 
+#teks-ketik {
+  border-right: 3px solid #f5c2e7;
+  padding-right: 4px;
+  animation: kedip 0.8s step-end infinite;
+}
+
+
+.hero-content {
+  width: 57%;
+  /* background-color: blue; */
+  align-items: center;
+}
+.hero-tag {
+  border: 2px #f5c2e7;
+  border-radius: 3.4vh;
+  color: #f5c2e7;
+  border-style: solid ;
+  padding: 1.6vh;
+}
+.hero-name {
+  font-size:  13vh;
+  margin-top: 3vh;
+  color: #fefae0;
+}
+.accent {
+  color: #f5c2e7;
+  line-height: 12.2vh;
+  font-size:  13vh;
+}
+.hero-role {
+  font-size: 4vh;
+  font-style: italic;
+  margin-bottom: 6vh;
+}
+
+.btn_style {
+  margin-top: 10vh;
+}
+
+.btn_style a{
+  margin-right: 5vh;
+  border: 1px ;
+  border-style: solid;
+  border-radius: 4vh;
+  padding: 2.5vh;
+  transition: all 0.3s ease; 
+}
+
+.btn1 {
+  /* color: #f5c2e7; */
+  background-color: #f5c2e7;
+  color: black;
+  transition: all 0.3s ease; 
+}
+.btn1:hover{
+  background-color: #1e1e2e;
+  color: #f5c2e7;
+}
+.btn2:hover {
+  color: #f5c2e7;
+}
+.tentang {
+  min-height: 100vh;
+  width: 100%;
+  border-top: 1px solid #535353;
+  display: flex;
+  justify-content: center;
+}
+.tentang-styl {
+  width: 59%;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+.tentang-card {
+  padding:40px;
+  height: 100%;
+  width: 50%;
+}
+.ttg-amba2 {
+  margin-top: 3vh;
+  color: #8a8880;
+}
+.ttg-amba{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  position: relative;
+}
+.ttg-amba1 {
+  color: #89dceb;
+  position: relative;
+  left: -135px;
+}
+.gambar_amba {
+  margin-top: 2vh;
+  height: 400px;
+  width: auto;
+  border-radius: 10px;
+}
+.pengenalan {
+  padding-top: 20vh;
+  color: #fefae0;
+  font-style: italic;
+}
+.proyek {
+  border-top: 1px solid #535353;
+  min-height: 100vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+.proyek1 {
+  padding-top: 20vh;
+  width: 59%;
+  min-width: 100vh;
+}
+.pilih {
+  min-height: 100vh;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card { 
+  width: 43.5vh;
+  height: 75vh;
+  flex-shrink: 0;
+  border-radius: 20px; 
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Bayangan halus biar efek melayang */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid #535353; 
+  transition: all 0.3s ease; 
+}
+.card:hover {
+  border: 2px solid #f5c2e7;
+}
+.proyek-p {
+  margin-bottom: 2vh;
+  color: #89dceb;;
+}
+.proyek-p2 {
+  color: #8a8880;
+}
+.proyek-h2 {
+  margin-bottom: 2vh;
+  color: #fefae0;
+}
+.kontak {
+  border-top: 1px solid #535353;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.kontak2 {
+  min-height: 100vh;
+  padding-top: 20vh;
+  width: 59%;
+  display: flex;
+  flex-direction: column;
+
+}
+.proyek-p {
+  width: 59%;
+  text-align: left;
+  margin-bottom: 2vh;
+}
+.kontak-card {
+  min-height: 55vh;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+.salken {
+  padding: 20px;
+  color: #fefae0;
+}
+form {
+    margin: 0 auto;
+    max-width: 70vh;
+    font-size: 20px;
+    text-align: left;
+    display:flex ;
+    width: 100%;
+    flex-direction: column;
+}
+form label{
+   margin-top: 2vh;
+}
+form input,
+form textarea{
+    padding: 2vh;
+    width: 100%;
+    resize: vertical;
+    margin-bottom: 1vh;
+    background-color: #13161e;;
+    border: 1px solid #f5c2e7;
+    border-radius: 5px;
+}
+
+.tombol {
+  margin-top: 2vh;
+  padding: 1vh;
+  background-color: #f5c2e7;
+  border-style: none;
+  border-radius: 8px;
+}
+.kontak-card2 {
+  color:  #8a8880;
+}
+.kontak-p2 {
+  width: 59%;
+  margin-bottom: 2vh;
+  text-align: center;
+  color:  #8a8880;
+}
+footer {
+            background-color: #11111b;
+            border-top: 1px solid #313244;
+            text-align: center;
+            padding: 24px 40px;
+            font-size: 13px;
+            color: #585b70;
+}
+
+
